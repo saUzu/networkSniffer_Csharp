@@ -113,38 +113,3 @@ namespace tezKoklayici
         }
     }
 }
-
-
-/*
-  private void arayuzSec(object sender,EventArgs e,LivePacketDevice device)
-        {
-            ListBox paketListesi = new ListBox();
-            paketListesi.Location = new Point(180, 100);
-            paketListesi.Size = new Size(300, 150);
-            paketListesi.ForeColor = Color.DarkOrange;
-            using (PacketCommunicator iletisimAracisi = device.Open(65536, PacketDeviceOpenAttributes.Promiscuous, 100))
-            {
-                cihazHata.Text = (device.Description + " >> dinleniyor.");
-                int x = 0;
-                Packet paket;
-                do
-                {
-                    PacketCommunicatorReceiveResult sonuc = iletisimAracisi.ReceivePacket(out paket);
-                    switch (sonuc)
-                    {
-                        case PacketCommunicatorReceiveResult.Timeout:
-                            continue;
-                        case PacketCommunicatorReceiveResult.Ok:
-                            paketListesi.Items.Add(paket.Timestamp.ToString("dd-MM-yyyy hh:mm.fff") + "  uzunluk: " + paket.Length);
-                            x++;
-                            if (x == 10)
-                                break;
-                            this.Controls.Add(paketListesi);
-                            break;
-                        default:
-                            throw new InvalidOperationException("olmadı");
-                    }
-                } while (x != 10);
-            }
-        }
- */
